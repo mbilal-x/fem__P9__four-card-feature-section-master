@@ -204,6 +204,7 @@ body {
 }
 
 .card {
+    position: relative;
     max-width: 22rem;
 }
 
@@ -212,7 +213,7 @@ body {
     background-color: white;
     box-sizing: border-box;
     border-radius: 8px;
-    
+    /* box shadow */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -221,11 +222,8 @@ body {
     .card--orange::before,
     .card--blue::before {
       content: " ";
-      display: inline-block;
-      width: 10rem; 
-
-      /* I don't get how to set the width of ::before to the same width as the card */
-
+      /* width: 10rem;  */
+      width: 100%;
       height: 0.3125rem;
       border-radius: 0.5rem 0.5rem 0 0;
       position: absolute;
