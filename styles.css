@@ -2,24 +2,321 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
 /* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*{
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 /* custom css */
-:root{
-
+:root {
+    /* colors */
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
 }
 
-body{
+body {
+    padding: 4rem 2rem;
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--very-light-gray);
 }
-/* utilities */
+
+.main{
+    max-width: 320px;
+}
+
+.hero {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.h1 {
+    margin-bottom: 0.9rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: var(--grayish-blue);
+}
+
+.h2--bold {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--very-dark-blue);
+}
+
+.text {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--grayish-blue);
+    
+
+}
+
+.card-wrapper {
+    margin: 4rem 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+}
+
+.card {
+    max-width: 22rem;
+}
+
+.card-padding{
+    padding: 1.5rem;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 8px;
+    
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+    .card--cyan::before,
+    .card--red::before,
+    .card--orange::before,
+    .card--blue::before {
+      content: " ";
+      display: inline-block;
+      width: 10rem; 
+
+      /* I don't get how to set the width of ::before to the same width as the card */
+
+      height: 0.3125rem;
+      border-radius: 0.5rem 0.5rem 0 0;
+      position: absolute;
+      background-color: rgb(72, 171, 225);
+    }
+
+    .card--cyan::before{
+        background-color: var(--cyan);
+    }
+    .card--red::before{
+        background-color: var(--red);
+    }
+    .card--orange::before{
+        background-color: var(--orange);
+    }
+    .card--blue::before{
+        background-color: var(--blue);
+    }
+
+
+.card__heading {
+    margin-bottom: 0.65rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--very-dark-blue);
+}
+
+.card__text {
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--grayish-blue);
+}
+
+.card__icon {
+    padding-top: 2rem;
+    display:flex;
+    justify-content: flex-end;
+}
+
 /* media queries */
+@media screen and (min-width: 48rem){
+
+    .main{
+        max-width: none;
+    }
+    
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .h1 {
+        font-size: 2.25rem;
+    }
+    
+    .h2--bold {
+        font-size: 2.25rem;
+    }
+    
+    .text {
+        max-width: 33rem;
+    }
+    
+    .card-wrapper {
+        margin: 4rem 4rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .card--cyan{
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+    }
+    .card--red{
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+    .card--orange{
+        grid-column: 2 / 3;
+        grid-row: 3 / 5;
+        
+    }
+    .card--blue{
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+    }
 
 
-/* colors */
-/* Very Dark Blue: hsl(234, 12%, 34%)
-- Grayish Blue: hsl(229, 6%, 66%)
-- Very Light Gray: hsl(0, 0%, 98%)
-- Red: hsl(0, 78%, 62%)
-- Cyan: hsl(180, 62%, 55%)
-- Orange: hsl(34, 97%, 64%)
-- Blue: hsl(212, 86%, 64%) */
-
+    
+}
