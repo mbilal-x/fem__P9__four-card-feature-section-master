@@ -1,0 +1,22 @@
+body
+main
+    section hero
+        h1 . h1-hero
+        h2 . h2-hero
+        p  . text
+
+    section .card-wrapper
+        .card*4
+            .card::before
+            .card__h3
+            .card__text
+            .card__icon
+                img
+
+        #card-cyan
+        #card-red
+        #card-orange
+        #card-blue
+    
+
+    
